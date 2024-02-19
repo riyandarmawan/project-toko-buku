@@ -31,7 +31,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i data-feather="user" class="icon-size"></i>
-                    <span>Charts</span>
+                    <span>Kasir</span>
                 </a>
             </li>
 

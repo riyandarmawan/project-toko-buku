@@ -29,9 +29,23 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="kasir.php">
                     <i data-feather="user" class="icon-size"></i>
                     <span>Kasir</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="pasok.php">
+                    <i data-feather="log-in" class="icon-size"></i>
+                    <span>Pasok</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="buku.php">
+                    <i data-feather="book-open" class="icon-size"></i>
+                    <span>Buku</span>
                 </a>
             </li>
 

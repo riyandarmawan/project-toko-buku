@@ -14,7 +14,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -29,23 +29,30 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="kasir.php">
+                <a class="nav-link" href="/dashboard/kasir/">
                     <i data-feather="user" class="icon-size"></i>
                     <span>Kasir</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="pasok.php">
-                    <i data-feather="log-in" class="icon-size"></i>
-                    <span>Pasok</span>
+                <a class="nav-link" href="/dashboard/distributor/">
+                    <i data-feather="truck" class="icon-size"></i>
+                    <span>Distributor</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="buku.php">
+                <a class="nav-link" href="/dashboard/buku/">
                     <i data-feather="book-open" class="icon-size"></i>
                     <span>Buku</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/pasok/">
+                    <i data-feather="log-in" class="icon-size"></i>
+                    <span>Pasok</span>
                 </a>
             </li>
 

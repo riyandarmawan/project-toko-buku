@@ -1,31 +1,30 @@
 <?php
-include 'layout/header.php';
-include 'layout/sidebar.php';
+include '../layout/header.php';
+include '../layout/sidebar.php';
 
-include '../koneksi_database.php';
+include '../../koneksi_database.php';
 
 if (isset($_POST['judul'])) {
     $sql = 'INSERT INTO buku(judul, no_isbn, penulis, penerbit, tahun, stok, harga_produk, harga_jual, ppn, diskon) VALUES("' . $_POST['judul'] . '","' . $_POST['no_isbn'] . '","' . $_POST['penulis'] . '","' . $_POST['penerbit'] . '","' . $_POST['tahun'] . '","' . $_POST['stok'] . '","' . $_POST['harga_produk'] . '","' . $_POST['harga_jual'] . '","' . $_POST['ppn'] . '","' . $_POST['diskon'] . '")';
     $conn->query($sql);
-    header('Location: buku.php');
+    header('Location: buku');
 }
 ?>
 
 <div id="content-wrapper" class="d-flex flex-column">
 
     <div id="content">
-        <?php include 'layout/topbar.php' ?>
+        <?php include '../layout/topbar.php' ?>
 
         <!-- Begin Page Content -->
         <div class="container-fluid container-wrap">
 
             <div class="wrap">
                 <form action="" method="post" class="form-container shadow-sm form-book">
-                    <h3 class="text-center mb-3">Tambah Buku</h3>
                     <div class="left">
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
-                            <input type="text" class="form-control" id="judul" name="judul" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" id="judul" name="judul" aria-describedby="emailHelp" autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="no_isbn" class="form-label">No ISBN</label>
@@ -74,4 +73,4 @@ if (isset($_POST['judul'])) {
         <!-- /.container-fluid -->
     </div>
 
-    <?php include 'layout/footer.php' ?>
+    <?php include '../layout/footer.php' ?>

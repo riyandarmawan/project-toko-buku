@@ -1,13 +1,13 @@
 <?php
-include 'layout/header.php';
-include 'layout/sidebar.php';
+include '../layout/header.php';
+include '../layout/sidebar.php';
 
-include '../koneksi_database.php';
+include '../../koneksi_database.php';
 
 if (isset($_POST['judul'])) {
     $sql = 'UPDATE buku SET judul="' . $_POST['judul'] . '", no_isbn="' . $_POST['no_isbn'] . '", penulis="' . $_POST['penulis'] . '", penerbit="' . $_POST['penerbit'] . '", tahun="' . $_POST['tahun'] . '", stok="' . $_POST['stok'] . '", harga_produk="' . $_POST['harga_produk'] . '", harga_jual="' . $_POST['harga_jual'] . '", ppn="' . $_POST['ppn'] . '", diskon="' . $_POST['diskon'] . '" WHERE id_buku=' . $_GET['id'];
     $conn->query($sql);
-    header('Location: buku.php');
+    header('Location: buku');
 }
 
 $sql = 'SELECT * FROM buku WHERE id_buku=' . $_GET['id'];
@@ -18,18 +18,17 @@ $buku = $conn->query($sql)->fetch_assoc();
 <div id="content-wrapper" class="d-flex flex-column">
 
     <div id="content">
-        <?php include 'layout/topbar.php' ?>
+        <?php include '../layout/topbar.php' ?>
 
         <!-- Begin Page Content -->
         <div class="container-fluid container-wrap">
 
             <div class="wrap">
                 <form action="" method="post" class="form-container shadow-sm form-book">
-                    <h3 class="text-center mb-3">Ubah Buku</h3>
                     <div class="left">
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
-                            <input type="text" class="form-control" id="judul" name="judul" aria-describedby="emailHelp" value="<?= $buku['judul'] ?>">
+                            <input type="text" class="form-control" id="judul" name="judul" aria-describedby="emailHelp" value="<?= $buku['judul'] ?>" autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="no_isbn" class="form-label">No ISBN</label>
@@ -78,4 +77,4 @@ $buku = $conn->query($sql)->fetch_assoc();
         <!-- /.container-fluid -->
     </div>
 
-    <?php include 'layout/footer.php' ?>
+    <?php include '../layout/footer.php' ?>

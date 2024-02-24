@@ -1,4 +1,30 @@
-<?php include '../layout/header.php'; ?>
+<?php
+
+session_start();
+
+if (isset($_POST['nama'])) {
+    include '../../koneksi_database.php';
+
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+    $sql = 'INSERT INTO kasir(nama, alamat, telepon, username, password) VALUES (
+            "' . $_POST['nama'] . '",
+            "' . $_POST['alamat'] . '",
+            "' . $_POST['telepon'] . '",
+            "' . $_POST['username'] . '",
+            "' . $password . '"
+    )';
+
+    $conn->query($sql);
+
+    $_SESSION['kasir'] = $_POST['telepon'];
+
+    header('Location: /');
+}
+
+include '../layout/header.php';
+
+?>
 
 <div class="h-screen flex items-center">
     <div class="min-h-96 border-2 rounded-lg shadow-lg m-auto p-8">

@@ -1,12 +1,32 @@
-<?php include '../layout/header.php'; ?>
+<?php
+
+session_start();
+
+if (isset($_POST['telepon'])) {
+    include '../../koneksi_database.php';
+
+    $sql = 'SELECT * FROM kasir WHERE telepon="' . $_POST['telepon'] . '"';
+    $result = $conn->query($sql)->fetch_assoc();
+
+    $password = $_POST['password'];
+    if (password_verify($password, $result['password'] && $_POST['telepon'] === $result['telepon'])) {
+        $_SESSION['kasir'] = $result['telepon'];
+    }
+
+    header('Location: /');
+}
+
+include '../layout/header.php';
+
+?>
 
 <div class="h-screen flex items-center">
     <div class="w-96 min-h-96 border-2 rounded-lg shadow-lg m-auto p-8">
         <h1 class="text-2xl font-bold text-center text-slate-700">Login</h1>
         <form action="" method="post" class="mt-4">
             <div class="mb-3">
-                <label for="email" class="form-label">Telepon</label>
-                <input type="tel" class="form-control" id="email" name="email" placeholder="Masukkan email anda disini">
+                <label for="telepon" class="form-label">Telepon</label>
+                <input type="tel" class="form-control" id="telepon" name="telepon" placeholder="Masukkan telepon anda disini">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
@@ -17,7 +37,7 @@
                 </div>
             </div>
             <div class="w-full flex justify-center">
-                <button type="submit" class="py-2 px-5 rounded-lg shadow-md bg-red-500 text-slate-100 font-bold">Login</button>
+                <button type="submit" class="py-2 px-3 rounded-lg shadow-md bg-red-500 text-slate-100 font-bold">Login</button>
             </div>
         </form>
         <p class="text-sm text-center mt-4">Belum punya akun? <a href="/home/registration/register.php" class="text-sky-600">Register sekarang!</a></p>

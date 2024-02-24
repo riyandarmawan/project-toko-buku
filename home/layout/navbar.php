@@ -7,7 +7,7 @@
         <a href="#">Buku</a>
     </nav>
     <div class="flex gap-3 items-center">
-        <a href="/home/registration/login.php" class="py-2 px-5 rounded-full active:bg-red-700 focus:bg-red-700 focus:ring focus:ring-red-500 font-semibold">Login</a>
-        <a href="#" class="py-2 px-5 bg-slate-100 text-red-600 rounded-full hover:bg-slate-200 active:bg-slate-300 font-semibold focus:ring focus:ring-red-400">Register</a>
+        <a href="/home/registration/login.php" class="py-2 px-3 rounded-full active:bg-red-700 focus:bg-red-700 focus:ring focus:ring-red-500 font-semibold">Login</a>
+        <a href="home/registration/register.php" class="py-2 px-3 bg-slate-100 text-red-600 rounded-full hover:bg-slate-200 active:bg-slate-300 font-semibold focus:ring focus:ring-red-400">Register</a>
     </div>
 </header>

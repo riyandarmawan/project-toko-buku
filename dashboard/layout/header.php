@@ -21,6 +21,9 @@
     <!-- feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
 
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- my css -->
     <link rel="stylesheet" href="/assets/css/style.css">
 

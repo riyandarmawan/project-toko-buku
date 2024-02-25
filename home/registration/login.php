@@ -9,11 +9,12 @@ if (isset($_POST['telepon'])) {
     $result = $conn->query($sql)->fetch_assoc();
 
     $password = $_POST['password'];
-    if (password_verify($password, $result['password'] && $_POST['telepon'] === $result['telepon'])) {
-        $_SESSION['kasir'] = $result['telepon'];
+    if (password_verify($password, $result['password'])) {
+        $_SESSION['login'] = $result['telepon'];
+        $sql = 'UPDATE kasir SET status="online" WHERE telepon="' . $_POST['telepon'] . '"';
+        $conn->query($sql);
+        header('Location: /');
     }
-
-    header('Location: /');
 }
 
 include '../layout/header.php';

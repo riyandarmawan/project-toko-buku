@@ -59,6 +59,13 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <li class="nav-item">
+                <a class="nav-link" href="/">
+                    <i data-feather="home" class="icon-size"></i>
+                    <span>Beranda</span>
+                </a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

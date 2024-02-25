@@ -7,17 +7,19 @@ if (isset($_POST['nama'])) {
 
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    $sql = 'INSERT INTO kasir(nama, alamat, telepon, username, password) VALUES (
+    $sql = 'INSERT INTO kasir(nama, alamat, telepon, status, username, password, akses) VALUES (
             "' . $_POST['nama'] . '",
             "' . $_POST['alamat'] . '",
             "' . $_POST['telepon'] . '",
+            "online";
             "' . $_POST['username'] . '",
-            "' . $password . '"
+            "' . $password . '",
+            "kasir"
     )';
 
     $conn->query($sql);
 
-    $_SESSION['kasir'] = $_POST['telepon'];
+    $_SESSION['login'] = $_POST['telepon'];
 
     header('Location: /');
 }

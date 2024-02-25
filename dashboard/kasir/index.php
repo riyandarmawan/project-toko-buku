@@ -21,7 +21,7 @@ $results = $conn->query($sql);
         <!-- Begin Page Content -->
         <div class="container-fluid container-wrap">
 
-            <a href="tambah.php" class="btn btn-primary mb-3">Tambah Kasir</a>
+            <a href="/dashboard/kasir/tambah.php" class="btn btn-primary mb-3">Tambah Kasir</a>
 
             <div class="table-responsive">
                 <table class="table">
@@ -47,15 +47,17 @@ $results = $conn->query($sql);
                                 <td><?= $result['nama'] ?></td>
                                 <td><?= $result['alamat'] ?></td>
                                 <td><?= $result['telepon'] ?></td>
-                                <td class="flex gap-1 items-center">
-                                    <div class="w-2 h-2 rounded-full bg-<?= $result['status'] === 'online' ? 'green' : 'red' ?>-500"></div>
-                                    <?= $result['status'] ?>
+                                <td>
+                                    <div class="flex items-center gap-1">
+                                        <div class="w-2 h-2 rounded-full bg-<?= $result['status'] === 'online' ? 'green' : 'red' ?>-500"></div>
+                                        <p><?= $result['status'] ?></p>
+                                    </div>
                                 </td>
                                 <td><?= $result['username'] ?></td>
                                 <td><?= $result['akses'] ?></td>
                                 <td>
-                                    <a href="ubah.php?id=<?= $result['id_kasir'] ?>" class="btn btn-warning text-slate-800 hover:text-slate-800 active:text-slate-800 focus:text-slate-800">Ubah</a>
-                                    <a href="hapus.php?id=<?= $result['id_kasir'] ?>" class="btn btn-danger">Hapus</a>
+                                    <a href="/dashboard/kasir/ubah.php?<?= $result['id_kasir'] ?>" class="btn btn-warning text-slate-800 hover:text-slate-800 active:text-slate-800 focus:text-slate-800">Ubah</a>
+                                    <a href="/dashboard/kasir/hapus.php?id=<?= $result['id_kasir'] ?>" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
                         <?php
@@ -65,7 +67,7 @@ $results = $conn->query($sql);
                     </tbody>
                 </table>
                 <?php if (empty($result)) : ?>
-                    <p class="text-center">Distributor tidak tersedia</p>
+                    <p class="text-center">Kasir tidak tersedia</p>
                 <?php endif; ?>
             </div>
 

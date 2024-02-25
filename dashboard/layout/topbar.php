@@ -11,7 +11,7 @@
         <div class="input-group">
             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for." aria-label="Search" aria-describedby="basic-addon2" id="search" name="search" autofocus autocomplete="off">
             <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary bg-[#4e73df]" type="submit">
                     <i class="fas fa-search fa-sm"></i>
                 </button>
             </div>

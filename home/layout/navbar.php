@@ -5,7 +5,7 @@ if (isset($_SESSION['login'])) {
 }
 ?>
 
-<header class="bg-red-600 w-full h-16 py-4 px-20 text-slate-100 flex justify-between items-center shadow-lg static top-0 right-0 left-0">
+<header class="bg-red-600 w-full h-16 py-4 px-20 text-slate-100 flex justify-between items-center shadow-lg fixed top-0 right-0 left-0 z-50">
     <a href="/" class="text-2xl font-bold">
         Readers
     </a>
@@ -17,7 +17,7 @@ if (isset($_SESSION['login'])) {
         <?php if (isset($_SESSION['login'])) : ?>
             <p class="active:text-slate-200 font-semibold"><?= $result['username'] ?></p>
             <i data-feather="chevron-down" class="w-5 cursor-pointer" id="dropdown-login"></i>
-            <div id="dropdown-menu" class="w-56 p-3 bg-slate-200 text-slate-800 shadow-md rounded-xl border-slate-700 absolute top-7 right-0 hidden">
+            <div id="dropdown-menu" class="w-56 p-3 bg-slate-200 text-slate-800 shadow-md rounded-xl border-slate-700 absolute top-7 right-0 hidden z-40">
                 <h4 class="text-center text-xl mb-2"><?= $result['nama'] ?></h4>
                 <hr>
                 <a href="/dashboard/" class="flex gap-2 mb-3 mt-3 hover:bg-slate-300 p-2 rounded-md active:bg-slate-400"><i data-feather="layout"></i>Dashboard</a>

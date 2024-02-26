@@ -1,7 +1,4 @@
 <?php
-include '../layout/header.php';
-include '../layout/sidebar.php';
-
 include '../../koneksi_database.php';
 
 $sql = 'SELECT * FROM kasir';
@@ -11,6 +8,12 @@ if (isset($_GET['search'])) {
 }
 
 $results = $conn->query($sql);
+
+include '../layout/header.php';
+include '../layout/sidebar.php';
+
+$sql = 'SELECT * FROM kasir WHERE username="' . $_SESSION['login'] . '"';
+$login = $conn->query($sql)->fetch_assoc();
 ?>
 
 <div id="content-wrapper" class="d-flex flex-column">
@@ -21,7 +24,9 @@ $results = $conn->query($sql);
         <!-- Begin Page Content -->
         <div class="container-fluid container-wrap">
 
-            <a href="/dashboard/kasir/tambah.php" class="btn btn-primary mb-3">Tambah Kasir</a>
+            <?php if ($login['akses'] === 'admin') : ?>
+                <a href="/dashboard/kasir/tambah.php" class="btn btn-primary mb-3">Tambah Kasir</a>
+            <?php endif; ?>
 
             <div class="table-responsive">
                 <table class="table">
@@ -55,11 +60,13 @@ $results = $conn->query($sql);
                                 </td>
                                 <td><?= $result['username'] ?></td>
                                 <td><?= $result['akses'] ?></td>
-                                <td>
-                                    <a href="/dashboard/kasir/ubah.php?id=<?= $result['id_kasir'] ?>" class="btn btn-warning text-slate-800 hover:text-slate-800 active:text-slate-800 focus:text-slate-800">Ubah</a>
-                                    <a href="/dashboard/kasir/ubah-password.php?id=<?= $result['id_kasir'] ?>" class="btn btn-warning text-slate-800 hover:text-slate-800 active:text-slate-800 focus:text-slate-800">Ubah password</a>
-                                    <a href="/dashboard/kasir/hapus.php?id=<?= $result['id_kasir'] ?>" class="btn btn-danger">Hapus</a>
-                                </td>
+                                <?php if ($login['akses'] === 'admin') : ?>
+                                    <td>
+                                        <a href="/dashboard/kasir/ubah.php?id=<?= $result['id_kasir'] ?>" class="btn btn-warning text-slate-800 hover:text-slate-800 active:text-slate-800 focus:text-slate-800">Ubah</a>
+                                        <a href="/dashboard/kasir/ubah-password.php?id=<?= $result['id_kasir'] ?>" class="btn btn-warning text-slate-800 hover:text-slate-800 active:text-slate-800 focus:text-slate-800">Ubah password</a>
+                                        <a href="/dashboard/kasir/hapus.php?id=<?= $result['id_kasir'] ?>" class="btn btn-danger">Hapus</a>
+                                    </td>
+                                <?php endif; ?>
                             </tr>
                         <?php
                             $no++;

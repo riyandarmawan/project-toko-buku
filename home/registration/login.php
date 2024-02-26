@@ -2,16 +2,16 @@
 
 session_start();
 
-if (isset($_POST['telepon'])) {
+if (isset($_POST['username'])) {
     include '../../koneksi_database.php';
 
-    $sql = 'SELECT * FROM kasir WHERE telepon="' . $_POST['telepon'] . '"';
+    $sql = 'SELECT * FROM kasir WHERE username="' . $_POST['username'] . '"';
     $result = $conn->query($sql)->fetch_assoc();
 
     $password = $_POST['password'];
-    if (password_verify($password, $result['password'])) {
-        $_SESSION['login'] = $result['telepon'];
-        $sql = 'UPDATE kasir SET status="online" WHERE telepon="' . $_POST['telepon'] . '"';
+    if (password_verify($password, $result['password']) && $result['username'] == $_POST['username']) {
+        $_SESSION['login'] = $result['username'];
+        $sql = 'UPDATE kasir SET status="online" WHERE username="' . $_POST['username'] . '"';
         $conn->query($sql);
         header('Location: /');
     }
@@ -26,8 +26,8 @@ include '../layout/header.php';
         <h1 class="text-2xl font-bold text-center text-slate-700">Login</h1>
         <form action="" method="post" class="mt-4">
             <div class="mb-3">
-                <label for="telepon" class="form-label">Telepon</label>
-                <input type="tel" class="form-control" id="telepon" name="telepon" placeholder="Masukkan telepon anda disini">
+                <label for="username" class="form-label">Username</label>
+                <input type="tel" class="form-control" id="username" name="username" placeholder="Masukkan username anda disini">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>

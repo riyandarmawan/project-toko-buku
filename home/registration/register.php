@@ -11,7 +11,7 @@ if (isset($_POST['nama'])) {
             "' . $_POST['nama'] . '",
             "' . $_POST['alamat'] . '",
             "' . $_POST['telepon'] . '",
-            "online";
+            "online",
             "' . $_POST['username'] . '",
             "' . $password . '",
             "kasir"

@@ -1,20 +1,20 @@
 <?php
-include '../layout/header.php';
-include '../layout/sidebar.php';
-
 include '../../koneksi_database.php';
 
 if (isset($_POST['judul'])) {
     $sql = 'INSERT INTO buku(judul, no_isbn, penulis, penerbit, tahun, stok, harga_produk, harga_jual, ppn, diskon) VALUES("' . $_POST['judul'] . '","' . $_POST['no_isbn'] . '","' . $_POST['penulis'] . '","' . $_POST['penerbit'] . '","' . $_POST['tahun'] . '","' . $_POST['stok'] . '","' . $_POST['harga_produk'] . '","' . $_POST['harga_jual'] . '","' . $_POST['ppn'] . '","' . $_POST['diskon'] . '")';
     $conn->query($sql);
-    header('Location: buku');
+    header('Location: /dashboard/buku');
 }
+
+include '../layout/header.php';
+include '../layout/sidebar.php';
 ?>
 
 <div id="content-wrapper" class="d-flex flex-column">
 
     <div id="content">
-        <?php include '../layout/topbar.php' ?>
+        <?php include '../layout/topbar.php'; ?>
 
         <!-- Begin Page Content -->
         <div class="container-fluid container-wrap">
@@ -65,7 +65,7 @@ if (isset($_POST['judul'])) {
                             <input type="num" class="form-control" id="diskon" name="diskon" aria-describedby="emailHelp">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Tambah Buku</button>
+                    <button type="submit" class="btn btn-primary bg-[#4e73df]">Tambah Buku</button>
                 </form>
             </div>
 

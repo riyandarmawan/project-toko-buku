@@ -54,8 +54,8 @@ $results = $conn->query($sql);
                                 <td><?= $result['penerbit'] ?></td>
                                 <td><?= $result['tahun'] ?></td>
                                 <td><?= $result['stok'] ?></td>
-                                <td><?= $result['harga_produk'] ?></td>
-                                <td><?= $result['harga_jual'] ?></td>
+                                <td>Rp. <?= number_format($result['harga_produk'], 0, ',', '.') ?></td>
+                                <td>Rp. <?= number_format($result['harga_jual'], 0, ',', '.') ?></td>
                                 <td><?= $result['ppn'] ?></td>
                                 <td><?= $result['diskon'] ?></td>
                                 <td>

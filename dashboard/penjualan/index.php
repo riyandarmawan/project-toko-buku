@@ -5,7 +5,7 @@ include '../../koneksi_database.php';
 $sql = 'SELECT penjualan.*, buku.judul, kasir.nama
         FROM penjualan
         left JOIN buku ON penjualan.id_buku = buku.id_buku
-        left JOIN kasir ON penjualan.id_buku = kasir.id_kasir';
+        left JOIN kasir ON penjualan.id_kasir = kasir.id_kasir';
 
 if (isset($_GET['search'])) {
     $sql = 'SELECT penjualan.*, buku.judul, kasir.nama
@@ -34,7 +34,7 @@ include '../layout/sidebar.php';
         <!-- Begin Page Content -->
         <div class="container-fluid container-wrap">
 
-            <a href="/dashboard/kasir/tambah.php" class="btn btn-primary mb-3">Tambah Penjualan</a>
+            <a href="/dashboard/penjualan/tambah.php" class="btn btn-primary mb-3">Tambah Penjualan</a>
 
             <div class="table-responsive">
                 <table class="table">
@@ -59,7 +59,7 @@ include '../layout/sidebar.php';
                                 <td><?= $result['judul'] ?></td>
                                 <td><?= $result['nama'] ?></td>
                                 <td><?= $result['jumlah'] ?></td>
-                                <td><?= $result['total'] ?></td>
+                                <td>Rp. <?= number_format($result['total'], 0, ',', '.') ?></td>
                                 <td><?= $result['tanggal'] ?></td>
                                 <td>
                                     <a href="/dashboard/penjualan/ubah.php?id=<?= $result['id_penjualan'] ?>" class="btn btn-warning text-slate-800 hover:text-slate-800 active:text-slate-800 focus:text-slate-800">Ubah</a>

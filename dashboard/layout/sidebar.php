@@ -56,6 +56,13 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link flex" href="/dashboard/penjualan/">
+                    <i data-feather="shopping-bag" class="icon-size"></i>
+                    <span>Penjualan</span>
+                </a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 

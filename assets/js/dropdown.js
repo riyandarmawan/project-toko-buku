@@ -1,11 +1,3 @@
-// eye password
-const eye = document.querySelector("#eye");
-const password = document.querySelector("#password");
-
-// eye.addEventListener("click", () => {
-//     password.type = eye.checked ? "text" : "password";
-// });
-
 // dropdown user
 const dropdown = document.querySelector("#dropdown-login");
 const menu = document.querySelector("#dropdown-menu");

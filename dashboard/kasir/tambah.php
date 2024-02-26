@@ -5,13 +5,16 @@ include '../layout/sidebar.php';
 include '../../koneksi_database.php';
 
 if (isset($_POST['nama'])) {
+    $password = $_POST['password'];
+    $password = password_hash($password, PASSWORD_BCRYPT);
+
     $sql = 'INSERT INTO kasir(nama, alamat, telepon, status, username, password, akses) VALUES(
             "' . $_POST['nama'] . '",
             "' . $_POST['alamat'] . '",
             "' . $_POST['telepon'] . '",
             "offline",
             "' . $_POST['username'] . '",
-            "' . $_POST['password'] . '",
+            "' . $password . '",
             "' . $_POST['akses'] . '"
         )';
     $conn->query($sql);
@@ -47,7 +50,11 @@ if (isset($_POST['nama'])) {
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">password</label>
-                        <input type="password" class="form-control" id="password" name="password" aria-describedby="emailHelp">
+                        <div class="relative">
+                            <input type="password" class="form-control" id="password" name="password" aria-describedby="emailHelp">
+                            <label for="eye" class="absolute right-3 top-[7px] cursor-pointer"><i data-feather="eye"></i></label>
+                            <input type="checkbox" class="hidden" id="eye">
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="akses" class="form-label">Akses</label>

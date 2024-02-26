@@ -70,4 +70,7 @@ include '../layout/header.php';
     </div>
 </div>
 
+<!-- password js -->
+<script src="/assets/js/password.js"></script>
+
 <?php include '../layout/footer.php'; ?>

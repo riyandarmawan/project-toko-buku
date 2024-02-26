@@ -56,7 +56,8 @@ $results = $conn->query($sql);
                                 <td><?= $result['username'] ?></td>
                                 <td><?= $result['akses'] ?></td>
                                 <td>
-                                    <a href="/dashboard/kasir/ubah.php?<?= $result['id_kasir'] ?>" class="btn btn-warning text-slate-800 hover:text-slate-800 active:text-slate-800 focus:text-slate-800">Ubah</a>
+                                    <a href="/dashboard/kasir/ubah.php?id=<?= $result['id_kasir'] ?>" class="btn btn-warning text-slate-800 hover:text-slate-800 active:text-slate-800 focus:text-slate-800">Ubah</a>
+                                    <a href="/dashboard/kasir/ubah-password.php?id=<?= $result['id_kasir'] ?>" class="btn btn-warning text-slate-800 hover:text-slate-800 active:text-slate-800 focus:text-slate-800">Ubah password</a>
                                     <a href="/dashboard/kasir/hapus.php?id=<?= $result['id_kasir'] ?>" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>

@@ -23,15 +23,15 @@ if (isset($_POST['nama_distributor'])) {
                 <form action="" method="post" class="form-container shadow-sm">
                     <div class="mb-3">
                         <label for="nama_distributor" class="form-label">Nama Distributor</label>
-                        <input type="text" class="form-control" id="nama_distributor" name="nama_distributor" aria-describedby="emailHelp" autofocus>
+                        <input type="text" class="form-control" id="nama_distributor" name="nama_distributor" aria-describedby="emailHelp" autofocus required>
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <input type="text" class="form-control" id="alamat" name="alamat" aria-describedby="emailHelp" autofocus>
+                        <input type="text" class="form-control" id="alamat" name="alamat" aria-describedby="emailHelp" autofocus required>
                     </div>
                     <div class="mb-3">
                         <label for="telepon" class="form-label">Telepon</label>
-                        <input type="num" class="form-control" id="telepon" name="telepon" aria-describedby="emailHelp" autofocus>
+                        <input type="num" class="form-control" id="telepon" name="telepon" aria-describedby="emailHelp" autofocus required>
                     </div>
                     <button type="submit" class="btn btn-primary bg-[#4e73df]">Tambah Distributor</button>
                 </form>

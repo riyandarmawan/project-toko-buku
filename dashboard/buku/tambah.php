@@ -24,45 +24,45 @@ include '../layout/sidebar.php';
                     <div class="left">
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
-                            <input type="text" class="form-control" id="judul" name="judul" aria-describedby="emailHelp" autofocus>
+                            <input type="text" class="form-control" id="judul" name="judul" aria-describedby="emailHelp" autofocus required>
                         </div>
                         <div class="mb-3">
                             <label for="no_isbn" class="form-label">No ISBN</label>
-                            <input type="num" class="form-control" id="no_isbn" name="no_isbn" aria-describedby="emailHelp">
+                            <input type="num" class="form-control" id="no_isbn" name="no_isbn" aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="penulis" class="form-label">Penulis</label>
-                            <input type="text" class="form-control" id="penulis" name="penulis" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" id="penulis" name="penulis" aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="penerbit" class="form-label">Penerbit</label>
-                            <input type="text" class="form-control" id="penerbit" name="penerbit" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" id="penerbit" name="penerbit" aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="tahun" class="form-label">Tahun</label>
-                            <input type="num" class="form-control" id="tahun" name="tahun" aria-describedby="emailHelp" min="1900" max="2099">
+                            <input type="num" class="form-control" id="tahun" name="tahun" aria-describedby="emailHelp" min="1900" max="2099" required>
                         </div>
                     </div>
                     <div class="right">
                         <div class="mb-3">
                             <label for="stok" class="form-label">Stok</label>
-                            <input type="num" class="form-control" id="stok" name="stok" aria-describedby="emailHelp">
+                            <input type="num" class="form-control" id="stok" name="stok" aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="harga_produk" class="form-label">Harga Produk</label>
-                            <input type="num" class="form-control" id="harga_produk" name="harga_produk" aria-describedby="emailHelp">
+                            <input type="num" class="form-control" id="harga_produk" name="harga_produk" aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="harga_jual" class="form-label">Harga Jual</label>
-                            <input type="num" class="form-control" id="harga_jual" name="harga_jual" aria-describedby="emailHelp">
+                            <input type="num" class="form-control" id="harga_jual" name="harga_jual" aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="ppn" class="form-label">PPN</label>
-                            <input type="num" class="form-control" id="ppn" name="ppn" aria-describedby="emailHelp">
+                            <input type="num" class="form-control" id="ppn" name="ppn" aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="diskon" class="form-label">Diskon</label>
-                            <input type="num" class="form-control" id="diskon" name="diskon" aria-describedby="emailHelp">
+                            <input type="num" class="form-control" id="diskon" name="diskon" aria-describedby="emailHelp" required>
                         </div>
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary bg-[#4e73df]">Tambah Buku</button>

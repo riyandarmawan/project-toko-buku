@@ -38,7 +38,7 @@ if (isset($_POST['new_password'])) {
                         <div class="relative">
                             <input type="password" class="form-control" id="password" name="password" aria-describedby="emailHelp" placeholder="Masukkan password lama">
                             <label for="eye" class="absolute right-3 top-[7px] cursor-pointer"><i data-feather="eye"></i></label>
-                            <input type="checkbox" class="hidden" id="eye">
+                            <input type="checkbox" class="hidden" id="eye" required>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -46,7 +46,7 @@ if (isset($_POST['new_password'])) {
                         <div class="relative">
                             <input type="password" class="form-control" id="new_password" name="new_password" aria-describedby="emailHelp" placeholder="Masukkan password baru">
                             <label for="eye" class="absolute right-3 top-[7px] cursor-pointer"><i data-feather="eye"></i></label>
-                            <input type="checkbox" class="hidden" id="new-eye">
+                            <input type="checkbox" class="hidden" id="new-eye" required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary bg-[#4e73df]">Ubah Password</button>

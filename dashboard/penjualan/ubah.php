@@ -51,7 +51,7 @@ include '../layout/sidebar.php';
                 <form action="" method="post" class="form-container shadow-sm">
                     <div class="mb-3">
                         <label for="id_buku" class="form-label">Judul buku</label>
-                        <select class="form-select" id="id_buku" name="id_buku" aria-describedby="emailHelp" aria-label="Default select example">
+                        <select class="form-select" id="id_buku" name="id_buku" aria-describedby="emailHelp" aria-label="Default select example" required>
                             <?php foreach ($books as $book) : ?>
                                 <option value="<?= $book['id_buku'] ?>"><?= $book['judul'] ?></option>
                             <?php endforeach; ?>
@@ -59,7 +59,7 @@ include '../layout/sidebar.php';
                     </div>
                     <div class="mb-3">
                         <label for="id_kasir" class="form-label">Nama kasir</label>
-                        <select class="form-select" id="id_kasir" name="id_kasir" aria-describedby="emailHelp" aria-label="Default select example">
+                        <select class="form-select" id="id_kasir" name="id_kasir" aria-describedby="emailHelp" aria-label="Default select example" required>
                             <?php foreach ($cashiers as $cashier) : ?>
                                 <option value="<?= $cashier['id_kasir'] ?>"><?= $cashier['nama'] ?></option>
                             <?php endforeach; ?>
@@ -67,11 +67,11 @@ include '../layout/sidebar.php';
                     </div>
                     <div class="mb-3">
                         <label for="jumlah" class="form-label">Jumlah</label>
-                        <input type="num" class="form-control" id="jumlah" name="jumlah" aria-describedby="emailHelp" value="<?= $penjualan['jumlah'] ?>">
+                        <input type="num" class="form-control" id="jumlah" name="jumlah" aria-describedby="emailHelp" value="<?= $penjualan['jumlah'] ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
-                        <input type="date" class="form-control" id="tanggal" name="tanggal" aria-describedby="emailHelp" value="<?= $penjualan['tanggal'] ?>">
+                        <input type="date" class="form-control" id="tanggal" name="tanggal" aria-describedby="emailHelp" value="<?= $penjualan['tanggal'] ?>" required>
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary bg-[#4e73df]">Ubah Penjualan</button>
                 </form>

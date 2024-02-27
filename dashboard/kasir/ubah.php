@@ -33,23 +33,23 @@ $kasir = $conn->query($sql)->fetch_assoc();
                 <form action="" method="post" class="form-container shadow-sm">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp" autofocus value="<?= $kasir['nama'] ?>">
+                        <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp" autofocus value="<?= $kasir['nama'] ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <textarea class="form-control resize-none" id="alamat" name="alamat" aria-describedby="emailHelp" rows="4" value="<?= $kasir['alamat'] ?>"></textarea>
+                        <textarea class="form-control resize-none" id="alamat" name="alamat" aria-describedby="emailHelp" rows="4" value="<?= $kasir['alamat'] ?>" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="telepon" class="form-label">Telepon</label>
-                        <input type="tel" class="form-control" id="telepon" name="telepon" aria-describedby="emailHelp" value="<?= $kasir['telepon'] ?>">
+                        <input type="tel" class="form-control" id="telepon" name="telepon" aria-describedby="emailHelp" value="<?= $kasir['telepon'] ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" value="<?= $kasir['username'] ?>">
+                        <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" value="<?= $kasir['username'] ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="akses" class="form-label">Akses</label>
-                        <select class="form-select" id="akses" name="akses" aria-describedby="emailHelp" aria-label="Default select example">
+                        <select class="form-select" id="akses" name="akses" aria-describedby="emailHelp" aria-label="Default select example" required>
                             <option value="admin" selected>Admin</option>
                             <option value="kasir">Kasir</option>
                         </select>

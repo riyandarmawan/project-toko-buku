@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION['login'])) {
-    $sql = 'SELECT * FROM kasir WHERE telepon="' . $_SESSION['login'] . '"';
+    $sql = 'SELECT * FROM kasir WHERE username="' . $_SESSION['login'] . '"';
     $result = $conn->query($sql)->fetch_assoc();
 }
 ?>

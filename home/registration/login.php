@@ -2,18 +2,19 @@
 
 session_start();
 
-if (isset($_POST['username'])) {
+if (isset($_POST['submit'])) {
     include '../../koneksi_database.php';
 
     $sql = 'SELECT * FROM kasir WHERE username="' . $_POST['username'] . '"';
     $result = $conn->query($sql)->fetch_assoc();
 
-    $password = $_POST['password'];
-    if (password_verify($password, $result['password']) && $result['username'] == $_POST['username']) {
+    if ($result['username'] == $_POST['username'] && $result['password'] == $_POST['password']) {
+        // if (password_verify($password, $result['password'])) {
         $_SESSION['login'] = $result['username'];
         $sql = 'UPDATE kasir SET status="online" WHERE username="' . $_POST['username'] . '"';
         $conn->query($sql);
         header('Location: /');
+        // }
     }
 }
 
@@ -27,7 +28,7 @@ include '../layout/header.php';
         <form action="" method="post" class="mt-4">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="tel" class="form-control" id="username" name="username" placeholder="Masukkan username anda disini">
+                <input type="tel" class="form-control" id="username" name="username" placeholder="Masukkan username anda disini" autocomplete="off" autofocus>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
@@ -38,7 +39,7 @@ include '../layout/header.php';
                 </div>
             </div>
             <div class="w-full flex justify-center">
-                <button type="submit" class="py-2 px-3 rounded-lg shadow-md bg-red-500 text-slate-100 font-bold">Login</button>
+                <button type="submit" name="submit" class="py-2 px-3 rounded-lg shadow-md bg-red-500 text-slate-100 font-bold">Login</button>
             </div>
         </form>
         <p class="text-sm text-center mt-4">Belum punya akun? <a href="/home/registration/register.php" class="text-sky-600">Register sekarang!</a></p>

@@ -1,6 +1,14 @@
 <?php
+$current_url = $_SERVER['REQUEST_URI'];
 
-include '../../koneksi_database.php';
+if (
+    $current_url == '/dashboard' ||
+    $current_url == '/dashboard/'
+) {
+    include '../koneksi_database.php';
+} else {
+    include '../../koneksi_database.php';
+}
 
 $sql = 'SELECT * FROM kasir WHERE username="' . $_SESSION['login'] . '"';
 $login = $conn->query($sql)->fetch_assoc();

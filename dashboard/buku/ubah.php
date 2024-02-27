@@ -4,10 +4,10 @@ include '../layout/sidebar.php';
 
 include '../../koneksi_database.php';
 
-if (isset($_POST['judul'])) {
+if (isset($_POST['submit'])) {
     $sql = 'UPDATE buku SET judul="' . $_POST['judul'] . '", no_isbn="' . $_POST['no_isbn'] . '", penulis="' . $_POST['penulis'] . '", penerbit="' . $_POST['penerbit'] . '", tahun="' . $_POST['tahun'] . '", stok="' . $_POST['stok'] . '", harga_produk="' . $_POST['harga_produk'] . '", harga_jual="' . $_POST['harga_jual'] . '", ppn="' . $_POST['ppn'] . '", diskon="' . $_POST['diskon'] . '" WHERE id_buku=' . $_GET['id'];
     $conn->query($sql);
-    header('Location: buku');
+    header('Location: /dashboard/buku/');
 }
 
 $sql = 'SELECT * FROM buku WHERE id_buku=' . $_GET['id'];
@@ -69,7 +69,7 @@ $buku = $conn->query($sql)->fetch_assoc();
                             <input type="num" class="form-control" id="diskon" name="diskon" aria-describedby="emailHelp" value="<?= $buku['diskon'] ?>">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ubah Buku</button>
+                    <button type="submit" name="submit" class="btn btn-primary bg-[#4e73df]">Ubah Buku</button>
                 </form>
             </div>
 

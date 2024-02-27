@@ -37,7 +37,7 @@ $distributor = $conn->query($sql)->fetch_assoc();
                         <label for="telepon" class="form-label">Telepon</label>
                         <input type="num" class="form-control" id="telepon" name="telepon" aria-describedby="emailHelp" value="<?= $distributor['telepon'] ?>" autofocus>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ubah Distributor</button>
+                    <button type="submit" class="btn btn-primary bg-[#4e73df]">Ubah Distributor</button>
                 </form>
             </div>
 

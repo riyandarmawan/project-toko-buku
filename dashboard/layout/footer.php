@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; <span class="text-danger">Readers</span> 2024</span>
+            <span>Copyright &copy; <a href="/" class="text-danger text-decoration-none">Readers</a> 2024</span>
         </div>
     </div>
 </footer>
@@ -52,9 +52,6 @@
 <script>
     feather.replace();
 </script>
-
-<!-- my js -->
-<script src="/assets/js/myJs.js"></script>
 
 </body>
 

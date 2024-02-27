@@ -41,7 +41,7 @@ $pasok = $conn->query($sql)->fetch_assoc();
                         <label for="tanggal" class="form-label">Tanggal</label>
                         <input type="date" class="form-control" id="tanggal" name="tanggal" aria-describedby="emailHelp" value="<?= $pasok['tanggal'] ?>" autofocus>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ubah Distributor</button>
+                    <button type="submit" class="btn btn-primary bg-[#4e73df]">Ubah Distributor</button>
                 </form>
             </div>
 

@@ -2,7 +2,6 @@
 $current_url = $_SERVER['REQUEST_URI'];
 
 if (
-    $current_url == '/dashboard' ||
     $current_url == '/dashboard/'
 ) {
     include '../koneksi_database.php';
@@ -23,17 +22,19 @@ $login = $conn->query($sql)->fetch_assoc();
         <i class="fa fa-bars"></i>
     </button>
 
-    <!-- Topbar Search -->
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="" method="get">
-        <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for." aria-label="Search" aria-describedby="basic-addon2" id="search" name="search" autocomplete="off">
-            <div class="input-group-append">
-                <button class="btn btn-primary bg-[#4e73df]" type="submit">
-                    <i class="fas fa-search fa-sm"></i>
-                </button>
+    <?php if ($current_url == '/dashboard/' || $current_url == '/dashboard/kasir/' || $current_url == '/dashboard/distributor/' || $current_url == '/dashboard/buku/' || $current_url == '/dashboard/pasok/' || $current_url == '/dashboard/penjualan/') : ?>
+        <!-- Topbar Search -->
+        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="" method="get">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for." aria-label="Search" aria-describedby="basic-addon2" id="search" name="search" autocomplete="off">
+                <div class="input-group-append">
+                    <button class="btn btn-primary bg-[#4e73df]" type="submit">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    <?php endif; ?>
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">

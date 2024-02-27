@@ -16,15 +16,13 @@ $cashiers = $conn->query($sql);
 
 if (isset($_POST['submit'])) {
     $sql = 'SELECT * FROM buku WHERE id_buku=' . $_POST['id_buku'];
-    $total = $conn->query($sql)->fetch_assoc();
-    $total = $total['harga_jual'] * $_POST['jumlah'];
 
     $sql = 'INSERT INTO penjualan(id_buku, id_kasir, jumlah, total, tanggal)
             VALUES (
                 "' . $_POST['id_buku'] . '",
                 "' . $_POST['id_kasir'] . '",
                 "' . $_POST['jumlah'] . '",
-                "' . $total . '",
+                "' . $_POST['total'] . '",
                 "' . $_POST['tanggal'] . '"
             )';
 
@@ -56,6 +54,10 @@ include '../layout/sidebar.php';
                             <?php endforeach; ?>
                         </select>
                     </div>
+                    <!-- <div class="mb-3">
+                        <label for="harga" class="form-label">Harga buku</label>
+                        <input type="num" class="form-control" id="harga" name="harga" aria-describedby="emailHelp" disabled>
+                    </div> -->
                     <div class="mb-3">
                         <label for="id_kasir" class="form-label">Nama kasir</label>
                         <select class="form-select" id="id_kasir" name="id_kasir" aria-describedby="emailHelp" aria-label="Default select example">
@@ -64,10 +66,15 @@ include '../layout/sidebar.php';
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <label for="jumlah" class="form-label">Jumlah</label>
                         <input type="num" class="form-control" id="jumlah" name="jumlah" aria-describedby="emailHelp">
+                        <!-- <button type="button" class="btn btn-primary bg-[#4e73df] mt-3" id="count-button">Hitung total</button> -->
                     </div>
+                    <!-- <div class="mb-3">
+                        <label for="total" class="form-label">Total</label>
+                        <input type="num" class="form-control" id="total" name="total" aria-describedby="emailHelp" disabled>
+                    </div> -->
                     <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
                         <input type="date" class="form-control" id="tanggal" name="tanggal" aria-describedby="emailHelp">
@@ -79,5 +86,8 @@ include '../layout/sidebar.php';
         </div>
         <!-- /.container-fluid -->
     </div>
+
+    <!-- count -->
+    <script src="/assets/js/count.js"></script>
 
     <?php include '../layout/footer.php' ?>

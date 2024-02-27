@@ -13,7 +13,7 @@ if (isset($_POST['nama'])) {
                 akses="' . $_POST['akses'] . '" 
             WHERE id_kasir=' . $_GET['id'];
     $conn->query($sql);
-    header('Location: kasir');
+    header('Location: /dashboard/kasir');
 }
 
 $sql = 'SELECT * FROM kasir WHERE id_kasir=' . $_GET['id'];

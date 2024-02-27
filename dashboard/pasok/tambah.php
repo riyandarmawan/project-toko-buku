@@ -37,7 +37,7 @@ if (isset($_POST['id_distributor'])) {
                         <label for="tanggal" class="form-label">Tanggal</label>
                         <input type="date" class="form-control" id="tanggal" name="tanggal" aria-describedby="emailHelp" autofocus>
                     </div>
-                    <button type="submit" class="btn btn-primary">Tambah Buku</button>
+                    <button type="submit" class="btn btn-primary bg-[#4e73df]">Tambah Buku</button>
                 </form>
             </div>
 

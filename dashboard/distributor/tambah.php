@@ -33,7 +33,7 @@ if (isset($_POST['nama_distributor'])) {
                         <label for="telepon" class="form-label">Telepon</label>
                         <input type="num" class="form-control" id="telepon" name="telepon" aria-describedby="emailHelp" autofocus>
                     </div>
-                    <button type="submit" class="btn btn-primary">Tambah Distributor</button>
+                    <button type="submit" class="btn btn-primary bg-[#4e73df]">Tambah Distributor</button>
                 </form>
             </div>
 
